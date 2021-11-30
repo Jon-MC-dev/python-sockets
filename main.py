@@ -15,7 +15,7 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 @socketio.on('message')
 def handle_message(data):
     print('received message: ' + str(data))
-    socketio.emit('hey', 'Hola desde el canal hey')
+    socketio.emit('regreso', data)
 
 @socketio.on('numero')
 def handle_numero(data):

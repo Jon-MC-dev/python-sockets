@@ -3,14 +3,12 @@ from flask_socketio import SocketIO
 import time
 import random
 
-
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 
 @app.route("/hola")
 def hello_world():
-    return "<p>Hello, Jonathan!</p>"
+    return "<p>Hello, Jonathan v1!</p>"
 
 socketio = SocketIO(app, cors_allowed_origins="*")
 

@@ -5,12 +5,11 @@ import random
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 @app.route("/hola")
 def hello_world():
     return "<p>Hello, Jonathan v1!</p>"
-
-socketio = SocketIO(app, cors_allowed_origins="*")
 
 @socketio.on('message')
 def handle_message(data):
@@ -26,4 +25,4 @@ def handle_numero(data):
 
 
 if __name__ == '__main__':
-    socketio.run(app)
+    socketio.run(app, port=5000)
